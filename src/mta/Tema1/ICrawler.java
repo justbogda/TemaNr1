@@ -1,3 +1,5 @@
+package mta.Tema1;
+
 public interface ICrawler {
 
      void search_by_word(String cuv);

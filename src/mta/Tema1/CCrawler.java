@@ -1,12 +1,25 @@
+package mta.Tema1;
+
+import mta.Tema1.CConfigure;
+
 import java.util.List;
 
  public class CCrawler implements ICrawler {
+     private static CCrawler instance = null;
+
     List<String> url_visited ;
     List<String> url_to_visit;
     List<CMyThread> threads;
     CConfigure conf;
 
      public CCrawler() {
+     }
+
+     public static CCrawler getInstance(){
+         if(instance == null) {
+             instance = new CCrawler();
+         }
+         return instance;
      }
 
      public void connect(){
